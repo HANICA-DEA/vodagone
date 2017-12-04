@@ -1,27 +1,79 @@
-# Vodagone
+# OOSE DEA Vodagone 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+This repository contains a front-end for the final programming assignment 
+of the course OOSE-DEA at the [HAN University of Applied Sciences](https://www.han.nl/).
 
-## Development server
+## Hosted version
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Use this version if you do not want to install it locally:
 
-## Code scaffolding
+## Enabling CORS headers in your JavaEE container
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To use this Vodagone Client with your own Vodagone Server, you will need to enable CORS headers
+in your JavaEE container. 
 
-## Build
+This is required because the Client is served from a different domain than the Server. Your browser will only allow this if the Server has the CORS Headers set in its HTTP response.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+To enable this, follow the steps below.
 
-## Running unit tests
+* Ensure that you understand the _why_. For instance, read: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+* Figure out how to perform the _how_. There are several ways with JavaEE and there are many resources
+available online. 
+ 
+## API
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+In general the API must conform the standards of a RESTFull API. It will use HTTP methods and expects HTTP statuscodes in its response.
 
-## Running end-to-end tests
+### Methods used 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+* GET : In case of acquiring one, or multiple resources.
+* POST: In case of creating a resource.
+* PUT: In case of modifying  a resource.
+* DELETE: In case of deleting a resource.
 
-## Further help
+### Response codes
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The client will expect the following respond codes to be used
+
+* 200: OK. A response to a successful GET, PUT or DELETE.
+* 201: Resource has been created. A response to a successful POST.
+* 400: Bad Request. Something is wrong with the request. This could be due to
+a missing query-parameter for the token.
+* 401: Unauthorized. Authorization has failed. This can happen if the user tried to log in, but supplied an invalid username/password.
+* 403: Forbidden. The request was valid, but you have requested a resource for which are not authorized. This will probably mean you have provided a token that is invalid.
+* 404: Not found. You have requested an endpoint that is not available.
+
+### HATEOAS
+
+Those that are aware of the concept HATEOAS might notice that this API is not HATEOAS. That is not a problem, HATEOAS is not within the scope of this excercise.
+
+### Endpoints
+The following endpoints are expected
+
+#### Login
+
+```
+url:    /login 
+method: POST
+```
+
+It will perform a request with an object in the body of the form
+
+```
+{
+  "user":     "meron", 
+  "password": "MySuperSecretPassword12341"
+}
+```
+
+It will expect a response containing an object of the form
+
+```
+{
+  "token":  "1234-1234-1234", 
+  "user":   "Meron Brouwer"
+}
+```
+
+This token is then stored in LocalStorage and used for each following
+request.
