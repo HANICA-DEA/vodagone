@@ -24,5 +24,4 @@ script:
   - ng build --target production --base-href "/vodagone/"
 
 after_success:
-   npm run coveralls
    [ $TRAVIS_BRANCH = master ] && bash deploy.sh
