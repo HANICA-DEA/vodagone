@@ -5,11 +5,11 @@ import {LoginRequest} from '../../models/login-request/login-request.model';
 import {LoginResponse} from '../../models/login-response/login-response.model';
 
 import {LoggingService} from '../logging/logging.service';
-import {RestfulSpotitubeClientService} from '../restful-client.service';
+import {RestfulClientService} from '../restful-client.service';
 
 
 @Injectable()
-export class LoginService extends RestfulSpotitubeClientService {
+export class LoginService extends RestfulClientService {
 
   /**
    * Create a new LoginService

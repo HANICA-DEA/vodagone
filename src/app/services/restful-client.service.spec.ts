@@ -1,19 +1,19 @@
 import {inject, TestBed} from '@angular/core/testing';
 
-import {RestfulSpotitubeClientService} from './restful-client.service';
+import {RestfulClientService} from './restful-client.service';
 import {LoggingService} from './logging/logging.service';
 
-describe('RestfulSpotitubeClientService', () => {
+describe('RestfulClientService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        RestfulSpotitubeClientService,
+        RestfulClientService,
         LoggingService
       ]
     });
   });
 
-  it('should be created', inject([RestfulSpotitubeClientService], (service: RestfulSpotitubeClientService) => {
+  it('should be created', inject([RestfulClientService], (service: RestfulClientService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -7,7 +7,7 @@ import {AppConstants} from '../app.constants';
 import {SettingsImpl} from '../models/settings/settings.model';
 
 @Injectable()
-export class RestfulSpotitubeClientService {
+export class RestfulClientService {
 
   private settingsChanged = new Subject<Settings>();
   private restError = new Subject<number>();
