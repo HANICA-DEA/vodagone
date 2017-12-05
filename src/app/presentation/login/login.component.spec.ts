@@ -9,6 +9,7 @@ import {LoggingService} from '../../services/logging/logging.service';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
+  let loginService: LoginService;
   let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async(() => {
@@ -30,11 +31,19 @@ describe('LoginComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
+    loginService = fixture.debugElement.injector.get(LoginService);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should be created', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should delegate login() to the service', () => {
+    const spy = spyOn(loginService, 'login');
+
+    component.login();
+    expect(spy).toHaveBeenCalled();
   });
 });
