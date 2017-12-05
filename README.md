@@ -1,5 +1,7 @@
 # OOSE DEA Vodagone 
 
+ [![Build Status](https://travis-ci.com/meronbrouwer/vodagone.svg?token=utxyypyqMC1kSyjpgbMm&branch=master)](https://travis-ci.org/meronbrouwer/vodagone) 
+
 This repository contains a front-end for the final programming assignment 
 of the course OOSE-DEA at the [HAN University of Applied Sciences](https://www.han.nl/).
 
