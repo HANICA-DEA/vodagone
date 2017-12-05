@@ -7,6 +7,8 @@ of the course OOSE-DEA at the [HAN University of Applied Sciences](https://www.h
 
 Use this version if you do not want to install it locally:
 
+-- ADD HERE AS SOON AS ONE IS AVAILABLE
+
 ## Enabling CORS headers in your JavaEE container
 
 To use this Vodagone Client with your own Vodagone Server, you will need to enable CORS headers
@@ -17,8 +19,7 @@ This is required because the Client is served from a different domain than the S
 To enable this, follow the steps below.
 
 * Ensure that you understand the _why_. For instance, read: https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
-* Figure out how to perform the _how_. There are several ways with JavaEE and there are many resources
-available online. 
+* Figure out how to perform the _how_. There are several ways with JavaEE and there are many resources available online. 
  
 ## API
 
