@@ -22,6 +22,3 @@ script:
   - ng lint
   - npm run test-coverage
   - ng build --target production --base-href "/vodagone/"
-
-after_success:
-   [ $TRAVIS_BRANCH = master ] && bash deploy.sh
