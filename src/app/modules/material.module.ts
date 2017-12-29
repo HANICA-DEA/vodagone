@@ -1,10 +1,16 @@
 import 'hammerjs';
 import {NgModule} from '@angular/core';
 import {
-  MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatMenuModule,
-  MatSnackBarModule, MatToolbarModule, MatTooltipModule
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatSnackBarModule,
+  MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
-
 
 @NgModule({
   imports: [
@@ -12,6 +18,7 @@ import {
     MatCardModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatMenuModule,
     MatSnackBarModule,
     MatToolbarModule,
@@ -22,6 +29,7 @@ import {
     MatCardModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatMenuModule,
     MatSnackBarModule,
     MatToolbarModule,

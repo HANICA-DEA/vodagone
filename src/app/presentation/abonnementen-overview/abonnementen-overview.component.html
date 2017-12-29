@@ -1,0 +1,14 @@
+<div class="overview flex-container"
+     fxLayout="row"
+     fxLayoutAlign="start stretch">
+  <app-abonnementen
+    class="flex-item"
+    fxFlex="25%"
+    (selectedAbonnementChange)="abonnement.abonnement = $event">
+  </app-abonnementen>
+  <app-abonnement
+    #abonnement
+    class="flex-item"
+    fxFlex="75%">
+  </app-abonnement>
+</div>

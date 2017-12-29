@@ -16,6 +16,10 @@
   </mat-menu>
 </mat-toolbar>
 
+<app-abonnementen-overview
+  class="content"
+  *ngIf="user && serverUrl">
+</app-abonnementen-overview>
 <div *ngIf="!user || !serverUrl"
      class="content flex-container"
      fxLayout="row"

@@ -3,7 +3,7 @@ import {Subject} from 'rxjs/Subject';
 import {HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Settings} from '../models/settings/settings.interface.model';
 import {LoggingService} from './logging/logging.service';
-import {AppConstants} from '../app.constants';
+import {VodagoneConstants} from '../vodagone.constants';
 import {SettingsImpl} from '../models/settings/settings.model';
 
 @Injectable()
@@ -60,7 +60,7 @@ export class RestfulClientService {
    * Call this method to clear LocalStorage. Consequently, all observers will be notified.
    */
   protected clearStorage(): void {
-    localStorage.removeItem(AppConstants.LOCAL_STORAGE_KEY_SETTINGS);
+    localStorage.removeItem(VodagoneConstants.LOCAL_STORAGE_KEY_SETTINGS);
     this.settingsChanged.next(undefined);
   }
 
@@ -89,22 +89,22 @@ export class RestfulClientService {
   }
 
   private initLocalStorageListeners(): void {
-    window.addEventListener(AppConstants.STORAGE_EVENT_LISTENER_KEY, (event: StorageEvent) => this.handleStorageChange(event));
+    window.addEventListener(VodagoneConstants.STORAGE_EVENT_LISTENER_KEY, (event: StorageEvent) => this.handleStorageChange(event));
   }
 
   private handleStorageChange(event: StorageEvent): void {
-    if (event.key === AppConstants.LOCAL_STORAGE_KEY_SETTINGS) {
+    if (event.key === VodagoneConstants.LOCAL_STORAGE_KEY_SETTINGS) {
       this.settingsChanged.next(JSON.parse(event.newValue));
     }
   }
 
   private persist(settings: Settings): void {
-    localStorage.setItem(AppConstants.LOCAL_STORAGE_KEY_SETTINGS, JSON.stringify(settings));
+    localStorage.setItem(VodagoneConstants.LOCAL_STORAGE_KEY_SETTINGS, JSON.stringify(settings));
     this.settingsChanged.next(settings);
   }
 
   private retrieve(): Settings {
-    const json = localStorage.getItem(AppConstants.LOCAL_STORAGE_KEY_SETTINGS);
+    const json = localStorage.getItem(VodagoneConstants.LOCAL_STORAGE_KEY_SETTINGS);
 
     if (json) {
       return JSON.parse(json);

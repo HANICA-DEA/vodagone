@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AppConstants} from '../../app.constants';
+import {VodagoneConstants} from '../../vodagone.constants';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {LoginRequest} from '../../models/login-request/login-request.model';
 import {LoginResponse} from '../../models/login-response/login-response.model';
@@ -46,7 +46,7 @@ export class LoginService extends RestfulClientService {
 
   private handleLoginRequest(user: string, password: string): void {
     const loginRequestBody = JSON.stringify(new LoginRequest(user, password));
-    const endpointUrl = this.createEndpointUrl(AppConstants.API_LOGIN);
+    const endpointUrl = this.createEndpointUrl(VodagoneConstants.API_LOGIN);
 
     this.httpClient.post<LoginResponse>(endpointUrl,
       loginRequestBody,

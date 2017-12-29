@@ -1,0 +1,25 @@
+.abonnementen {
+  height: 100%;
+
+  mat-nav-list {
+    padding-top: 0;
+
+    .selected {
+      background-color: #292929;
+
+    }
+    .name {
+      padding-left: 8px;
+      color: lightgrey;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .totaalBedrag {
+    color: lightgrey;
+    text-align: end;
+    padding: 6px 8px 0 0;
+  }
+}

@@ -78,3 +78,36 @@ It will expect a response containing an object of the form
 
 This token is then stored in LocalStorage and used for each following
 request.
+
+#### Abonnementen
+
+##### Geet all Abonnementen
+
+To acquire a list of all Abonnementen:
+
+```
+url:    /abonnementen 
+method: GET
+query parameter:  token
+```
+
+It will expect a response containing the complete list of all Abonnementen:
+
+```
+{
+  "abonnementen" :[
+               {
+                  "id"    : 1,
+                  "name"  : "Death metal",
+                  "type"  : vodafone
+               },
+               {
+                  "id"    : 2,
+                  "name"  : "Pop",
+                  "type"  : ziggo
+               }
+              ],
+  "totalPrice"  :42.37}
+```
+
+The property `totalPrice` should be in euro's and should be point seperated.
