@@ -19,6 +19,20 @@ export class AbonnementComponent implements OnInit {
   ngOnInit() {
   }
 
+  public onUpgrade(): void {
+
+  }
+
+  public onTerminate(): void {
+
+  }
+
+  public onShare(): void {
+
+  }
+
+
+
   private setEmptyAbonnement(): void {
     this.abonnement = new AbonnementImpl('', AbonnementType.VODAFONE);
   }

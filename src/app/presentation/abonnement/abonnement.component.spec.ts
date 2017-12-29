@@ -1,6 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AbonnementComponent } from './abonnement.component';
+import {AbonnementComponent} from './abonnement.component';
+import {VodagoneAngularModule} from '../../modules/angular.module';
+import {VodagoneMaterialModule} from '../../modules/material.module';
 
 describe('AbonnementComponent', () => {
   let component: AbonnementComponent;
@@ -8,9 +10,15 @@ describe('AbonnementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AbonnementComponent ]
+      declarations: [
+        AbonnementComponent
+      ],
+      imports: [
+        VodagoneAngularModule,
+        VodagoneMaterialModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
