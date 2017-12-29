@@ -24,12 +24,12 @@ export class AbonnementenService extends RestfulClientService {
   }
 
   /**
-   * Return a complete list of abonnementen.
+   * Return a complete list of Abonnementen.
    *
    * @return {Promise<Abonnementen>} The complete list of abonnementen.
    */
   public async getAbonnementen(): Promise<Abonnementen> {
-    const endpointUrl = this.getPlaylistEndpoint(undefined);
+    const endpointUrl = this.getAbonnementEndpoint(undefined);
     const params = this.createtokenParam();
 
     try {
@@ -41,7 +41,26 @@ export class AbonnementenService extends RestfulClientService {
     }
   }
 
-  private getPlaylistEndpoint(abonnement: Abonnement): string {
+  /**
+   * Return a specific Abonnement.
+   *
+   * @param {Abonnement} abonnement
+   * @return {Promise<Abonnement>} A specific Abonnement
+   */
+  public async getAbonnement(abonnement: Abonnement): Promise<Abonnement> {
+    const endpointUrl = this.getAbonnementEndpoint(abonnement);
+    const params = this.createtokenParam();
+
+    try {
+      const data: Abonnement = await this.httpClient.get<Abonnement>(endpointUrl, {params: params}).toPromise();
+      return data;
+    } catch (err) {
+      this.handleErrors(err);
+      return Promise.reject(err);
+    }
+  }
+
+  private getAbonnementEndpoint(abonnement: Abonnement): string {
     const baseEndpointUrl = this.createEndpointUrl(VodagoneConstants.API_ABONNEMENTEN);
 
     if (abonnement) {

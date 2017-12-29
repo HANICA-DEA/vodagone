@@ -4,7 +4,7 @@
   <app-abonnementen
     class="flex-item"
     fxFlex="25%"
-    (selectedAbonnementChange)="abonnement.abonnement = $event">
+    (selectedAbonnementChange)="abonnement.loadAbonnement($event)">
   </app-abonnementen>
   <app-abonnement
     #abonnement

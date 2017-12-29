@@ -81,7 +81,7 @@ request.
 
 #### Abonnementen
 
-##### Geet all Abonnementen
+##### Get all Abonnementen
 
 To acquire a list of all Abonnementen:
 
@@ -98,16 +98,38 @@ It will expect a response containing the complete list of all Abonnementen:
   "abonnementen" :[
                {
                   "id"    : 1,
-                  "name"  : "Death metal",
-                  "type"  : vodafone
+                  "name"  : "Werktelefoon",
+                  "type"  : "vodafone"
                },
                {
                   "id"    : 2,
-                  "name"  : "Pop",
-                  "type"  : ziggo
+                  "name"  : "Thuis abonnement",
+                  "type"  : "ziggo"
                }
               ],
   "totalPrice"  :42.37}
 ```
 
 The property `totalPrice` should be in euro's and should be point seperated.
+
+##### Get a specific Abonnement
+
+To acquire a specific Abonnement:
+```
+url:    /abonnementen/:id
+method: GET
+query parameter:  token
+```
+
+It will expect a response containing the Abonnement for the given id:
+
+```
+{
+    "id"    : 1,
+    "name"  : "Werktelefoon",
+    "type"  : "vodafone"
+    "status" : "opgezegd" | "proef" | "actief"
+}
+```
+
+
