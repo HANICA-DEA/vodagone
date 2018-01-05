@@ -25,8 +25,9 @@ export class AbonnementComponent {
   }
 
   public onTerminate(): void {
-
+    this.abonnementenService.terminateAbonnement(this.abonnement).then(data => this.setAbonnement(data));
   }
+
 
   public onShare(): void {
 

@@ -137,6 +137,35 @@ It will expect a response containing the complete Abonnement for the given id:
     "id": 0,
     "aanbieder": "vodafone",
     "dienst": "Mobiele telefonie 100",
+    "prijs" : "€5,- per maand",
+    "startDatum": "2017-01-01",
+    "verdubbelbaar": false,
+    "verdubbeld": false,
+    "deelbaar": false,
+    "status": "actief"
+}
+```
+* The property `startDatum` should be a date and formatted as `yyyy-MM-dd`.
+* The property `status` should be a string and only contain either `"opgezegd"`,  `"actief"` or `"proef""`
+
+##### Terminate an Abonnement
+
+To terminate an Abonnement:
+
+```
+url:    /abonnementen/:id
+method: DELETE
+query parameter:  token
+```
+
+It will expect a response containing the complete Abonnement for the given id. Because the Abonnement has been terminated, the `status` should now read `opgezegd`.
+
+```
+{
+    "id": 0,
+    "aanbieder": "vodafone",
+    "dienst": "Mobiele telefonie 100",
+    "prijs" : "€5,- per maand",
     "startDatum": "2017-01-01",
     "verdubbelbaar": false,
     "verdubbeld": false,
@@ -144,7 +173,4 @@ It will expect a response containing the complete Abonnement for the given id:
     "status": "opgezegd"
 }
 ```
-* The property `startDatum` should be a date and formatted as `yyyy-MM-dd`.
-* The property `status` should be a string and only contain either `"opgezegd"`,  `"actief"` or `"proef""`
-
 

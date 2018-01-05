@@ -5,6 +5,7 @@ export interface Abonnement {
   id: number;
   aanbieder: Aanbieder;
   dienst: string;
+  prijs: string;
   startDatum: string;
   verdubbelbaar: boolean;
   verdubbeld: boolean;

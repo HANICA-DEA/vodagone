@@ -60,6 +60,25 @@ export class AbonnementenService extends RestfulClientService {
     }
   }
 
+  /**
+   * Return a specific Abonnement.
+   *
+   * @param {Abonnement} abonnement
+   * @return {Promise<Abonnement>} A specific Abonnement
+   */
+  public async terminateAbonnement(abonnement: Abonnement): Promise<Abonnement> {
+    const endpointUrl = this.getAbonnementEndpoint(abonnement);
+    const params = this.createtokenParam();
+
+    try {
+      const data: Abonnement = await this.httpClient.delete<Abonnement>(endpointUrl, {params: params}).toPromise();
+      return data;
+    } catch (err) {
+      this.handleErrors(err);
+      return Promise.reject(err);
+    }
+  }
+
   private getAbonnementEndpoint(abonnement: Abonnement): string {
     const baseEndpointUrl = this.createEndpointUrl(VodagoneConstants.API_ABONNEMENTEN);
 

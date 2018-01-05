@@ -1,25 +1,16 @@
 <div class="details"
      *ngIf="abonnement">
 
-  <div class="flex-container header"
-       fxLayout="row"
-       fxLayoutAlign="space-between stretch"
-       fxLayoutWrap="nowrap">
-    <h1 class="flex-item abonnementHeader mat-display-1"
-        fxFlex="100%">
-      {{ abonnement.dienst }}
-    </h1>
+  <div class="buttons">
     <button mat-mini-fab
             (click)="onUpgrade()"
             [disabled]="abonnement.status === abonnementStatus.OPGEZEGD"
-            class="flex-item"
             mat-tooltip="Upgrade this Service">
       <mat-icon>add_circle</mat-icon>
     </button>
     <button mat-mini-fab
             (click)="onShare()"
             [disabled]="abonnement.status === abonnementStatus.OPGEZEGD"
-            class="flex-item"
             mat-tooltip="Share this Service">
       <mat-icon>share</mat-icon>
     </button>
@@ -27,18 +18,16 @@
             color="warn"
             [disabled]="abonnement.status === abonnementStatus.OPGEZEGD"
             (click)="onTerminate()"
-            class="flex-item"
             mat-tooltip="Terminate subscription">
       <mat-icon>delete</mat-icon>
     </button>
   </div>
-
-  <div class="body">
-    <mat-list>
-      <mat-list-item> Pepper</mat-list-item>
-      <mat-list-item> Salt</mat-list-item>
-      <mat-list-item> Paprika</mat-list-item>
-    </mat-list>
-
+  <div class="content">
+    <div class="mat-display-1">
+      {{ abonnement.dienst }}
+    </div>
+    <div class="mat-subheading-2">
+      {{ abonnement.prijs }}
+    </div>
   </div>
 </div>
