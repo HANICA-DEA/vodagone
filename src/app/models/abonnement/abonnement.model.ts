@@ -1,24 +1,25 @@
-import {Abonnement} from './abonnement.interface.model';
-import {AbonnementType} from './abonnement.type.enum';
+import {Abonnement} from './abonnement.interface';
+import {Aanbieder} from './aanbieder.enum';
 import {AbonnementStatus} from './abonnement.status.enum';
-import {AbonnementSoort} from './abonnement.soort.enum';
 
 export class AbonnementImpl implements Abonnement {
   id: number;
-  name: string;
-  type: AbonnementType;
+  dienst: string;
+  aanbieder: Aanbieder;
   startDatum: string;
   status: AbonnementStatus;
-  soort: AbonnementSoort;
+  verdubbelbaar: boolean;
+  deelbaar: boolean;
   verdubbeld: boolean;
 
-  constructor(name: string, type: AbonnementType) {
+  constructor(aanbieder: Aanbieder,  dienst: string) {
     this.id = -1;
-    this.name = name;
+    this.dienst = dienst;
     this.startDatum = undefined;
-    this.type = type;
+    this.aanbieder = aanbieder;
     this.status = undefined;
-    this.soort = undefined;
+    this.verdubbelbaar = false;
     this.verdubbeld = false;
+    this.deelbaar = false;
   }
 }

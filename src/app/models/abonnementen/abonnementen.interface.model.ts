@@ -1,4 +1,4 @@
-import {Abonnement} from '../abonnement/abonnement.interface.model';
+import {Abonnement} from '../abonnement/abonnement.interface';
 
 export interface Abonnementen {
   abonnementen: Abonnement[];

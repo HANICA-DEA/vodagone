@@ -1,4 +1,4 @@
-export enum AbonnementType {
+export enum Aanbieder {
   VODAFONE = 'vodafone',
   ZIGGO = 'ziggo'
 }

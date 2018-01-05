@@ -1,4 +1,4 @@
-import {Abonnement} from '../abonnement/abonnement.interface.model';
+import {Abonnement} from '../abonnement/abonnement.interface';
 import {Abonnementen} from './abonnementen.interface.model';
 
 export class AbonnementenImpl implements Abonnementen {

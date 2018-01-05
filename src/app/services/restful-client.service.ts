@@ -15,7 +15,7 @@ export class RestfulClientService {
   /**
    * Register to this observable to be notified when the settings change.
    *
-   * @type {Observable<Settings>}
+   * @aanbieder {Observable<Settings>}
    */
   public settingsChanged$ = this.settingsChanged.asObservable();
 
@@ -24,7 +24,7 @@ export class RestfulClientService {
   /**
    * Register to this observer to be notified if any Errors occur.
    *
-   * @type {Observable<string>}
+   * @aanbieder {Observable<string>}
    */
   public restError$ = this.restError.asObservable();
 

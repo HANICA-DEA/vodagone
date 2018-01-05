@@ -97,39 +97,54 @@ It will expect a response containing the complete list of all Abonnementen:
 {
   "abonnementen" :[
                {
-                  "id"    : 1,
-                  "name"  : "Werktelefoon",
-                  "type"  : "vodafone"
+                  "id": 0,
+                  "aanbieder": "vodafone",
+                  "dienst": "Mobiele telefonie 100"
                },
                {
-                  "id"    : 2,
-                  "name"  : "Thuis abonnement",
-                  "type"  : "ziggo"
-               }
+                  "id": 1,
+                  "aanbieder": "vodafone",
+                  "dienst": "Mobiele telefonie 250"
+               },
+               {
+                  "id": 1,
+                  "aanbieder": "ziggo",
+                  "dienst": "Kabel-internet (download 300 Mbps)"
+               },
               ],
   "totalPrice"  :42.37}
 ```
 
-The property `totalPrice` should be in euro's and should be point seperated.
+* The property `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
+* The property `totalPrice` should be in euro's and should be point separated.
+
 
 ##### Get a specific Abonnement
 
-To acquire a specific Abonnement:
+Notice that the Abonnementen above only contain a small part of all information 
+available. To acquire a complete Abonnement:
+
 ```
 url:    /abonnementen/:id
 method: GET
 query parameter:  token
 ```
 
-It will expect a response containing the Abonnement for the given id:
+It will expect a response containing the complete Abonnement for the given id:
 
 ```
 {
-    "id"    : 1,
-    "name"  : "Werktelefoon",
-    "type"  : "vodafone"
-    "status" : "opgezegd" | "proef" | "actief"
+    "id": 0,
+    "aanbieder": "vodafone",
+    "dienst": "Mobiele telefonie 100",
+    "startDatum": "2017-01-01",
+    "verdubbelbaar": false,
+    "verdubbeld": false,
+    "deelbaar": false,
+    "status": "opgezegd"
 }
 ```
+* The property `startDatum` should be a date and formatted as `yyyy-MM-dd`.
+* The property `status` should be a string and only contain either `"opgezegd"`,  `"actief"` or `"proef""`
 
 

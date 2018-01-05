@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import {RestfulClientService} from '../restful-client.service';
 import {HttpClient} from '@angular/common/http';
 import {Abonnementen} from '../../models/abonnementen/abonnementen.interface.model';
-import {Abonnement} from '../../models/abonnement/abonnement.interface.model';
+import {Abonnement} from '../../models/abonnement/abonnement.interface';
 
 @Injectable()
 export class AbonnementenService extends RestfulClientService {

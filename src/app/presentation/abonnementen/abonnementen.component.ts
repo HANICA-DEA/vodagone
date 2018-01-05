@@ -1,9 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Abonnementen} from '../../models/abonnementen/abonnementen.interface.model';
 import {AbonnementenService} from '../../services/abonnementen/abonnementen.service';
-import {Abonnement} from '../../models/abonnement/abonnement.interface.model';
+import {Abonnement} from '../../models/abonnement/abonnement.interface';
 import {AbonnementenImpl} from '../../models/abonnementen/abonnementen.model';
-import {AbonnementType} from '../../models/abonnement/abonnement.type.enum';
+import {Aanbieder} from '../../models/abonnement/aanbieder.enum';
 
 @Component({
   selector: 'app-abonnementen',
@@ -14,7 +14,7 @@ export class AbonnementenComponent implements OnInit {
 
   public abonnementen: Abonnementen;
   public selectedAbonnementId: number;
-  public abonnementType = AbonnementType;
+  public aanbieder = Aanbieder;
 
   @Output() selectedAbonnementChange = new EventEmitter<Abonnement>();
 

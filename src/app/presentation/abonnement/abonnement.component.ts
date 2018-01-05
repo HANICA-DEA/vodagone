@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {Abonnement} from '../../models/abonnement/abonnement.interface.model';
+import {Abonnement} from '../../models/abonnement/abonnement.interface';
 import {AbonnementImpl} from '../../models/abonnement/abonnement.model';
-import {AbonnementType} from '../../models/abonnement/abonnement.type.enum';
+import {Aanbieder} from '../../models/abonnement/aanbieder.enum';
 import {AbonnementStatus} from '../../models/abonnement/abonnement.status.enum';
 import {AbonnementenService} from '../../services/abonnementen/abonnementen.service';
 
@@ -33,7 +33,7 @@ export class AbonnementComponent {
   }
 
   public loadAbonnement(abonnement: Abonnement): void {
-    this.abonnementenService.getAbonnement(this.abonnement).then(data => this.setAbonnement(data));
+    this.abonnementenService.getAbonnement(abonnement).then(data => this.setAbonnement(data));
   }
 
   private setAbonnement(abonnement: Abonnement): void {
@@ -41,7 +41,7 @@ export class AbonnementComponent {
   }
 
   private setEmptyAbonnement(): void {
-    this.abonnement = new AbonnementImpl('', AbonnementType.VODAFONE);
+    this.abonnement = new AbonnementImpl(Aanbieder.VODAFONE, '');
   }
 
 }

@@ -3,6 +3,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {AbonnementComponent} from './abonnement.component';
 import {VodagoneAngularModule} from '../../modules/angular.module';
 import {VodagoneMaterialModule} from '../../modules/material.module';
+import {AbonnementenService} from '../../services/abonnementen/abonnementen.service';
+import {LoggingService} from '../../services/logging/logging.service';
 
 describe('AbonnementComponent', () => {
   let component: AbonnementComponent;
@@ -16,6 +18,10 @@ describe('AbonnementComponent', () => {
       imports: [
         VodagoneAngularModule,
         VodagoneMaterialModule
+      ],
+      providers: [
+        AbonnementenService,
+        LoggingService
       ]
     })
       .compileComponents();
