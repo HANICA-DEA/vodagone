@@ -13,7 +13,6 @@ import {AbonnementenService} from '../../services/abonnementen/abonnementen.serv
 export class AbonnementComponent {
 
   public abonnement: Abonnement;
-  public abonnementStatus = AbonnementStatus;
 
   public disableUpgradeButton = false;
   public disableShareButton = false;
