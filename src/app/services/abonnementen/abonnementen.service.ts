@@ -47,8 +47,8 @@ export class AbonnementenService extends RestfulClientService {
    * @param {Abonnement} abonnement
    * @return {Promise<Abonnement>} A specific Abonnement
    */
-  public async getAbonnement(abonnement: Abonnement): Promise<Abonnement> {
-    const endpointUrl = this.getAbonnementEndpoint(abonnement);
+  public async getAbonnement(id: number): Promise<Abonnement> {
+    const endpointUrl = this.getAbonnementEndpoint(id);
     const params = this.createtokenParam();
 
     try {
@@ -66,8 +66,8 @@ export class AbonnementenService extends RestfulClientService {
    * @param {Abonnement} abonnement
    * @return {Promise<Abonnement>} A specific Abonnement
    */
-  public async terminateAbonnement(abonnement: Abonnement): Promise<Abonnement> {
-    const endpointUrl = this.getAbonnementEndpoint(abonnement);
+  public async terminateAbonnement(id: number): Promise<Abonnement> {
+    const endpointUrl = this.getAbonnementEndpoint(id);
     const params = this.createtokenParam();
 
     try {
@@ -79,11 +79,11 @@ export class AbonnementenService extends RestfulClientService {
     }
   }
 
-  private getAbonnementEndpoint(abonnement: Abonnement): string {
+  private getAbonnementEndpoint(id: number): string {
     const baseEndpointUrl = this.createEndpointUrl(VodagoneConstants.API_ABONNEMENTEN);
 
-    if (abonnement) {
-      return (baseEndpointUrl.concat('/')).concat(abonnement.id.toString());
+    if (id || id === 0) {
+      return (baseEndpointUrl.concat('/')).concat(id.toString());
     } else {
       return baseEndpointUrl;
     }

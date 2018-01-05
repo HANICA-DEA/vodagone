@@ -16,7 +16,7 @@ export class AbonnementenComponent implements OnInit {
   public selectedAbonnementId: number;
   public aanbieder = Aanbieder;
 
-  @Output() selectedAbonnementChange = new EventEmitter<Abonnement>();
+  @Output() selectedAbonnementChange = new EventEmitter<number>();
 
   constructor(private abonnementenService: AbonnementenService) {
     this.setEmptyAbonnementen();
@@ -37,12 +37,8 @@ export class AbonnementenComponent implements OnInit {
    * @param {Abonnement} abonnement
    */
   public onAbonnementSelected(abonnement: Abonnement): void {
-    this.selectedAbonnementChange.emit(abonnement);
-    if (abonnement) {
-      this.selectedAbonnementId = abonnement.id;
-    } else {
-      this.selectedAbonnementId = undefined;
-    }
+    this.selectedAbonnementChange.emit(abonnement.id);
+    this.selectedAbonnementId = abonnement.id;
   }
 
   private setAbonnementen(abonn: Abonnementen): void {

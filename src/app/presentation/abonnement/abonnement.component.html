@@ -4,21 +4,21 @@
   <div class="buttons">
     <button mat-mini-fab
             (click)="onUpgrade()"
-            [disabled]="abonnement.status === abonnementStatus.OPGEZEGD"
-            mat-tooltip="Upgrade this Service">
+            [disabled]="disableUpgradeButton"
+            matTooltip="Upgrade this Service">
       <mat-icon>add_circle</mat-icon>
     </button>
     <button mat-mini-fab
             (click)="onShare()"
-            [disabled]="abonnement.status === abonnementStatus.OPGEZEGD"
-            mat-tooltip="Share this Service">
+            [disabled]="disableShareButton"
+            matTooltip="Share this Service">
       <mat-icon>share</mat-icon>
     </button>
     <button mat-mini-fab
             color="warn"
-            [disabled]="abonnement.status === abonnementStatus.OPGEZEGD"
+            [disabled]="!disableTerminateButton"
             (click)="onTerminate()"
-            mat-tooltip="Terminate subscription">
+            matTooltip="Terminate subscription">
       <mat-icon>delete</mat-icon>
     </button>
   </div>

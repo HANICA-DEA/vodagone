@@ -2,23 +2,25 @@
      fxLayout="column">
   <mat-nav-list class="flex-item" fxFlex="100%">
     <mat-list-item
-      matTooltip="{{abonnement.dienst}}"
-      *ngFor="let abonnement of abonnementen.abonnementen"
-      [class.selected]=" abonnement.id === selectedAbonnementId"
-      (click)="onAbonnementSelected(abonnement)">
-      <mat-icon
-        color="accent"
-        *ngIf="abonnement.aanbieder === aanbieder.VODAFONE"
-        matListIcon>
-        phone_android
-      </mat-icon>
-      <mat-icon
-        color="primary"
-        *ngIf="abonnement.aanbieder === aanbieder.ZIGGO"
-        matListIcon>
-        tv
-      </mat-icon>
-      <span class="name">{{ abonnement.dienst }}</span>
+      *ngFor="let abonnement of abonnementen.abonnementen">
+      <button mat-button
+              matTooltip="{{abonnement.dienst}}"
+              (click)="onAbonnementSelected(abonnement)"
+              [class.selected]="abonnement.id === selectedAbonnementId">
+        <mat-icon
+          color="accent"
+          *ngIf="abonnement.aanbieder === aanbieder.VODAFONE"
+          matListIcon>
+          phone_android
+        </mat-icon>
+        <mat-icon
+          color="primary"
+          *ngIf="abonnement.aanbieder === aanbieder.ZIGGO"
+          matListIcon>
+          tv
+        </mat-icon>
+        {{ abonnement.dienst }}
+      </button>
     </mat-list-item>
   </mat-nav-list>
 

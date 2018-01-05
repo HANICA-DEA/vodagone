@@ -13,36 +13,52 @@ import {AbonnementenService} from '../../services/abonnementen/abonnementen.serv
 export class AbonnementComponent {
 
   public abonnement: Abonnement;
-
   public abonnementStatus = AbonnementStatus;
+
+  public disableUpgradeButton = false;
+  public disableShareButton = false;
+  public disableTerminateButton = false;
 
   constructor(private abonnementenService: AbonnementenService) {
     this.setEmptyAbonnement();
   }
 
+  /**
+   * Upgade this Abonnement.
+   */
   public onUpgrade(): void {
 
   }
 
+  /**
+   * Terminate this Abonnement.
+   */
   public onTerminate(): void {
-    this.abonnementenService.terminateAbonnement(this.abonnement).then(data => this.setAbonnement(data));
+    this.abonnementenService.terminateAbonnement(this.abonnement.id).then(data => this.setAbonnement(data));
   }
-
 
   public onShare(): void {
 
   }
 
-  public loadAbonnement(abonnement: Abonnement): void {
-    this.abonnementenService.getAbonnement(abonnement).then(data => this.setAbonnement(data));
+  public onLoadAbonnement(id: number): void {
+    this.abonnementenService.getAbonnement(id).then(data => this.setAbonnement(data));
   }
 
   private setAbonnement(abonnement: Abonnement): void {
     this.abonnement = abonnement;
+
+    this.updateButtonState(abonnement);
   }
 
   private setEmptyAbonnement(): void {
     this.abonnement = new AbonnementImpl(Aanbieder.VODAFONE, '');
+  }
+
+  private updateButtonState(abonnement: Abonnement): void {
+    this.disableTerminateButton = abonnement.status === AbonnementStatus.OPGEZEGD;
+    this.disableUpgradeButton = !abonnement.verdubbelbaar || abonnement.verdubbeld;
+    this.disableShareButton = !abonnement.deelbaar;
   }
 
 }

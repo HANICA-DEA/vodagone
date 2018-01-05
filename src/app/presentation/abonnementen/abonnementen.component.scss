@@ -4,13 +4,10 @@
   mat-nav-list {
     padding-top: 0;
 
-    .selected {
-      background-color: #292929;
-
-    }
-    .name {
-      padding-left: 8px;
-      color: lightgrey;
+    .mat-button {
+      width: 100%;
+      padding: 0;
+      text-align: left;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
