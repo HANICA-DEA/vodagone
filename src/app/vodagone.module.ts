@@ -12,6 +12,7 @@ import {AbonnementenComponent} from './presentation/abonnementen/abonnementen.co
 import {AbonnementComponent} from './presentation/abonnement/abonnement.component';
 import {AbonnementenService} from './services/abonnementen/abonnementen.service';
 import {AbonneesComponent} from './presentation/abonees/abonees.component';
+import {AbonneeService} from './services/abonee/abonee.service';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {AbonneesComponent} from './presentation/abonees/abonees.component';
     VodagoneMaterialModule
   ],
   providers: [
+    AbonneeService,
     AbonnementenService,
     LoggingService,
     LoginService],
