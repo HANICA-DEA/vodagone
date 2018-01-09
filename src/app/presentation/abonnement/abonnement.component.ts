@@ -5,7 +5,8 @@ import {Aanbieder} from '../../models/abonnement/aanbieder.enum';
 import {AbonnementStatus} from '../../models/abonnement/abonnement.status.enum';
 import {AbonnementenService} from '../../services/abonnementen/abonnementen.service';
 import {MatDialog} from '@angular/material';
-import {AbonneesComponent} from '../abonees/abonees.component';
+import {AbonneesComponent} from '../abonees/abonnees.component';
+import {AbonneeService} from '../../services/abonee/abonee.service';
 
 @Component({
   selector: 'app-abonnement',
@@ -21,7 +22,8 @@ export class AbonnementComponent {
   public disableTerminateButton = false;
 
 
-  constructor(private abonnementenService: AbonnementenService,
+  constructor(private abonneeService: AbonneeService,
+              private abonnementenService: AbonnementenService,
               public dialog: MatDialog) {
     this.setEmptyAbonnement();
   }
@@ -48,7 +50,7 @@ export class AbonnementComponent {
 
     aboneesDialogRef.afterClosed().subscribe(abonnee => {
         if (abonnee) {
-          console.log('Adding this track: ', abonnee);
+          this.abonneeService.addAbonnement(abonnee, this.abonnement);
         }
       }
     );

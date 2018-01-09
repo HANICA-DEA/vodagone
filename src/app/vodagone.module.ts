@@ -11,7 +11,7 @@ import {AbonnementenOverviewComponent} from './presentation/abonnementen-overvie
 import {AbonnementenComponent} from './presentation/abonnementen/abonnementen.component';
 import {AbonnementComponent} from './presentation/abonnement/abonnement.component';
 import {AbonnementenService} from './services/abonnementen/abonnementen.service';
-import {AbonneesComponent} from './presentation/abonees/abonees.component';
+import {AbonneesComponent} from './presentation/abonees/abonnees.component';
 import {AbonneeService} from './services/abonee/abonee.service';
 
 

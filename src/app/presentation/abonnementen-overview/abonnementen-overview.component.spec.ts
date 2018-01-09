@@ -7,6 +7,7 @@ import {AbonnementenService} from '../../services/abonnementen/abonnementen.serv
 import {VodagoneMaterialModule} from '../../modules/material.module';
 import {VodagoneAngularModule} from '../../modules/angular.module';
 import {LoggingService} from '../../services/logging/logging.service';
+import {AbonneeService} from '../../services/abonee/abonee.service';
 
 describe('AbonnementenOverviewComponent', () => {
   let component: AbonnementenOverviewComponent;
@@ -23,6 +24,7 @@ describe('AbonnementenOverviewComponent', () => {
         VodagoneMaterialModule
       ],
       providers: [
+        AbonneeService,
         AbonnementenService,
         LoggingService
       ]

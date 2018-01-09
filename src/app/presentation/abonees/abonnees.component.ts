@@ -6,7 +6,7 @@ import {AbonneeService} from '../../services/abonee/abonee.service';
 @Component({
   selector: 'app-abonnees',
   templateUrl: './abonnees.component.html',
-  styleUrls: ['./abonees.component.scss']
+  styleUrls: ['./abonnees.component.scss']
 })
 export class AbonneesComponent implements OnInit {
 
@@ -26,7 +26,6 @@ export class AbonneesComponent implements OnInit {
   }
 
   public onAbonneeSelected(selectedAbonnee: Abonnee): void {
-    console.log('Selecting abonee: ', selectedAbonnee);
     this.selectedAbonnee = selectedAbonnee;
   }
 

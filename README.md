@@ -91,7 +91,7 @@ method: GET
 query parameter:  token
 ```
 
-It will expect a response containing the complete list of all Abonnementen:
+It will expect a response containing the complete list of all Abonnementen and the totalPrice:
 
 ```
 {
@@ -173,4 +173,58 @@ It will expect a response containing the complete Abonnement for the given id. B
     "status": "opgezegd"
 }
 ```
+
+#### Abonnees
+
+##### Get all Abonnees
+
+To acquire a list of all Abonnees:
+
+```
+url:    /abonnees 
+method: GET
+query parameter:  token
+```
+
+It will expect a response containing an array of all Abonnees:
+
+```
+[
+  {
+    "id": 0,
+    "name": "Meron",
+    "email": "Meron.Brouwer@han.nl"
+  },
+  {
+    "id": 1,
+    "name": "Dennis",
+    "email": "Dennis.Breuker@han.nl"
+  },
+  {
+    "id": 2,
+    "name": "Michel",
+    "email": "Michel.Portier@han.nl"
+  }
+]
+ 
+```
+
+##### Add an Abonnement to an Abonnee
+
+To add an Abonnement to an Abonnee:
+```
+url:              /abonnee/:id
+method:           POST
+query parameter:  token
+```
+
+The body should contain the new playlist:
+```
+{
+  "id"    : 1
+}
+```
+
+It will expect a 200 OK.
+
 

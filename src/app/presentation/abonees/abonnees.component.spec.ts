@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import {async, TestBed} from '@angular/core/testing';
-import {AbonneesComponent} from './abonees.component';
+import {AbonneesComponent} from './abonnees.component';
 import {NgModule} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {VodagoneAngularModule} from '../../modules/angular.module';

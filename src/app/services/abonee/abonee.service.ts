@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {LoggingService} from '../logging/logging.service';
 import {Abonnee} from '../../models/abonnee/abonnee.interface';
 import {VodagoneConstants} from '../../vodagone.constants';
+import {Abonnement} from '../../models/abonnement/abonnement.interface';
 
 @Injectable()
 export class AbonneeService extends RestfulClientService {
@@ -36,6 +37,23 @@ export class AbonneeService extends RestfulClientService {
       this.handleErrors(err);
       return Promise.reject(err);
     }
+  }
+
+  /**
+   * Add an Abonnement to an Abonnee.
+   */
+  public addAbonnement(abonnee: Abonnee, abonnement: Abonnement): Promise<any> {
+    const endpointUrl = this.getAbonneeEndpoint(abonnee.id);
+    const params = this.createtokenParam();
+
+
+    return this.httpClient.post<void>(endpointUrl,
+      JSON.stringify({'id': abonnement.id}),
+      {
+        headers: this.headers,
+        params: params
+      }
+    ).toPromise();
   }
 
   private getAbonneeEndpoint(id: number): string {
