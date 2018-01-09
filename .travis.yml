@@ -8,11 +8,7 @@ node_js:
 env:
   - CXX=g++-4.8
 addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
+  chrome: stable
 
 branches:
   only:
