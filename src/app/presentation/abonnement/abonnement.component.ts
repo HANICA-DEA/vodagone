@@ -7,6 +7,7 @@ import {AbonnementenService} from '../../services/abonnementen/abonnementen.serv
 import {MatDialog} from '@angular/material';
 import {AbonneesComponent} from '../abonees/abonnees.component';
 import {AbonneeService} from '../../services/abonee/abonee.service';
+import {AbonnementUpgradabillity} from '../../models/abonnement/abonnement.upgrade.enum';
 
 @Component({
   selector: 'app-abonnement',
@@ -17,9 +18,8 @@ export class AbonnementComponent {
 
   public abonnement: Abonnement;
 
-  public disableUpgradeButton = false;
-  public disableShareButton = false;
-  public disableTerminateButton = false;
+  public abonnementStatus = AbonnementStatus;
+  public abonnementVerdubbeling = AbonnementUpgradabillity;
 
 
   constructor(private abonneeService: AbonneeService,
@@ -62,18 +62,9 @@ export class AbonnementComponent {
 
   private setAbonnement(abonnement: Abonnement): void {
     this.abonnement = abonnement;
-
-    this.updateButtonState(abonnement);
   }
 
   private setEmptyAbonnement(): void {
     this.abonnement = new AbonnementImpl(Aanbieder.VODAFONE, '');
   }
-
-  private updateButtonState(abonnement: Abonnement): void {
-    this.disableTerminateButton = abonnement.status === AbonnementStatus.OPGEZEGD;
-    this.disableUpgradeButton = !abonnement.verdubbelbaar || abonnement.verdubbeld;
-    this.disableShareButton = !abonnement.deelbaar;
-  }
-
 }

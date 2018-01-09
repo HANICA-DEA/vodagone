@@ -139,14 +139,15 @@ It will expect a response containing the complete Abonnement for the given id:
     "dienst": "Mobiele telefonie 100",
     "prijs" : "€5,- per maand",
     "startDatum": "2017-01-01",
-    "verdubbelbaar": false,
+    "verdubbeling": "standaard",
     "verdubbeld": false,
     "deelbaar": false,
     "status": "actief"
 }
 ```
 * The property `startDatum` should be a date and formatted as `yyyy-MM-dd`.
-* The property `status` should be a string and only contain either `"opgezegd"`,  `"actief"` or `"proef""`
+* The property `status` should be a string and only contain either `"opgezegd"`,  `"actief"` or `"proef"`.
+* The property `verdubbeling` should be a string and only contain either `"standaard"`, `"verdubbeld"`, `"niet-beschikbaar"`.
 
 ##### Terminate an Abonnement
 
@@ -167,8 +168,7 @@ It will expect a response containing the complete Abonnement for the given id. B
     "dienst": "Mobiele telefonie 100",
     "prijs" : "€5,- per maand",
     "startDatum": "2017-01-01",
-    "verdubbelbaar": false,
-    "verdubbeld": false,
+    "verdubbeling": "standaard",
     "deelbaar": false,
     "status": "opgezegd"
 }
@@ -225,6 +225,6 @@ The body should contain the new playlist:
 }
 ```
 
-It will expect a 200 OK.
+It will expect a 200 OK in the response.
 
 

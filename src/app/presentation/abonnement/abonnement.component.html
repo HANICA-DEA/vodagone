@@ -4,19 +4,19 @@
   <div class="buttons">
     <button mat-mini-fab
             (click)="onUpgrade()"
-            [disabled]="disableUpgradeButton"
+            [disabled]="abonnement.verdubbeling !== abonnementVerdubbeling.STANDARD"
             matTooltip="Upgrade this Service">
       <mat-icon>add_circle</mat-icon>
     </button>
     <button mat-mini-fab
             (click)="onShare()"
-            [disabled]="disableShareButton"
+            [disabled]="!abonnement.deelbaar"
             matTooltip="Share this Service">
       <mat-icon>share</mat-icon>
     </button>
     <button mat-mini-fab
             color="warn"
-            [disabled]="!disableTerminateButton"
+            [disabled]="abonnement.status !== abonnementStatus.OPGEZEGD"
             (click)="onTerminate()"
             matTooltip="Terminate subscription">
       <mat-icon>delete</mat-icon>

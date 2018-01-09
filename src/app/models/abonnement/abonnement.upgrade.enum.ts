@@ -1,5 +1,5 @@
-export enum AbonnementStatus {
-  PROEF = 'proef',
-  ACTIEF = 'actief',
-  OPGEZEGD = 'opgezegd'
+export enum AbonnementUpgradabillity {
+  UPGRADED = 'verdubbeld',
+  STANDARD = 'standaard',
+  UNAVAILABLE = 'niet-beschikbaar'
 }

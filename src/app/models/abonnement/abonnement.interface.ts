@@ -1,5 +1,6 @@
 import {Aanbieder} from './aanbieder.enum';
 import {AbonnementStatus} from './abonnement.status.enum';
+import {AbonnementUpgradabillity} from './abonnement.upgrade.enum';
 
 export interface Abonnement {
   id: number;
@@ -7,8 +8,7 @@ export interface Abonnement {
   dienst: string;
   prijs: string;
   startDatum: string;
-  verdubbelbaar: boolean;
-  verdubbeld: boolean;
+  verdubbeling: AbonnementUpgradabillity;
   deelbaar: boolean;
   status: AbonnementStatus;
 }
