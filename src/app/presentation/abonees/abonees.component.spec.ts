@@ -5,6 +5,8 @@ import {NgModule} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {VodagoneAngularModule} from '../../modules/angular.module';
 import {VodagoneMaterialModule} from '../../modules/material.module';
+import {LoggingService} from '../../services/logging/logging.service';
+import {AbonneeService} from '../../services/abonee/abonee.service';
 
 @NgModule({
   entryComponents: [
@@ -28,7 +30,9 @@ describe('AbonneesComponent', () => {
         VodagoneMaterialModule,
         TestModule
       ],
-      providers: []
+      providers: [
+        AbonneeService,
+        LoggingService]
     })
       .compileComponents();
   }));

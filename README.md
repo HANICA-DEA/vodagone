@@ -107,7 +107,7 @@ It will expect a response containing the complete list of all Abonnementen:
                   "dienst": "Mobiele telefonie 250"
                },
                {
-                  "id": 1,
+                  "id": 2,
                   "aanbieder": "ziggo",
                   "dienst": "Kabel-internet (download 300 Mbps)"
                },
