@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {Abonnement} from '../../models/abonnement/abonnement.interface';
 import {AbonnementImpl} from '../../models/abonnement/abonnement.model';
-import {Aanbieder} from '../../models/abonnement/aanbieder.enum';
-import {AbonnementStatus} from '../../models/abonnement/abonnement.status.enum';
+import {Aanbieder} from '../../models/abonnement/enums/aanbieder.enum';
+import {AbonnementStatus} from '../../models/abonnement/enums/abonnement.status.enum';
 import {AbonnementenService} from '../../services/abonnementen/abonnementen.service';
 import {MatDialog} from '@angular/material';
 import {AbonneesComponent} from '../abonees/abonnees.component';
 import {AbonneeService} from '../../services/abonee/abonee.service';
-import {AbonnementUpgradabillity} from '../../models/abonnement/abonnement.upgrade.enum';
+import {AbonnementUpgradabillity} from '../../models/abonnement/enums/abonnement.upgrade.enum';
 
 @Component({
   selector: 'app-abonnement',
@@ -32,6 +32,7 @@ export class AbonnementComponent {
    * Upgade this Abonnement.
    */
   public onUpgrade(): void {
+    this.abonnementenService.upgadeAbonnement(this.abonnement.id).then(data => this.setAbonnement(data));
 
   }
 

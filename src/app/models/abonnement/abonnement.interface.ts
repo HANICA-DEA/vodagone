@@ -1,6 +1,6 @@
-import {Aanbieder} from './aanbieder.enum';
-import {AbonnementStatus} from './abonnement.status.enum';
-import {AbonnementUpgradabillity} from './abonnement.upgrade.enum';
+import {Aanbieder} from './enums/aanbieder.enum';
+import {AbonnementStatus} from './enums/abonnement.status.enum';
+import {AbonnementUpgradabillity} from './enums/abonnement.upgrade.enum';
 
 export interface Abonnement {
   id: number;

@@ -3,7 +3,7 @@ import {Abonnementen} from '../../models/abonnementen/abonnementen.interface.mod
 import {AbonnementenService} from '../../services/abonnementen/abonnementen.service';
 import {Abonnement} from '../../models/abonnement/abonnement.interface';
 import {AbonnementenImpl} from '../../models/abonnementen/abonnementen.model';
-import {Aanbieder} from '../../models/abonnement/aanbieder.enum';
+import {Aanbieder} from '../../models/abonnement/enums/aanbieder.enum';
 
 @Component({
   selector: 'app-abonnementen',

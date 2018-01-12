@@ -174,6 +174,38 @@ It will expect a response containing the complete Abonnement for the given id. B
 }
 ```
 
+##### Upgrade an Abonnement
+
+To upgrade an Abonnement:
+
+```
+url:    /abonnementen/:id
+method: POST
+query parameter:  token
+```
+
+The body will contain an object of the form:
+```
+{
+    "verdubbeling": "verdubbeld"
+}
+```
+
+It will expect a response containing the complete Abonnement that has been upgraded. Because the Abonnement has been upgraded, the `verdubbeling` should now read `verdubbeld`. Futhermore, the field `price` should now show a increase of 50%.
+
+```
+{
+    "id": 0,
+    "aanbieder": "vodafone",
+    "dienst": "Mobiele telefonie 250",
+    "prijs" : "€15,- per maand",
+    "startDatum": "2017-01-01",
+    "verdubbeling": "verdubbeld",
+    "deelbaar": false,
+    "status": "actief"
+}
+```
+
 #### Abonnees
 
 ##### Get all Abonnees
@@ -206,7 +238,6 @@ It will expect a response containing an array of all Abonnees:
     "email": "Michel.Portier@han.nl"
   }
 ]
- 
 ```
 
 ##### Add an Abonnement to an Abonnee

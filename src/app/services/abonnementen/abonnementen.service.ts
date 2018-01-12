@@ -7,6 +7,7 @@ import {RestfulClientService} from '../restful-client.service';
 import {HttpClient} from '@angular/common/http';
 import {Abonnementen} from '../../models/abonnementen/abonnementen.interface.model';
 import {Abonnement} from '../../models/abonnement/abonnement.interface';
+import {AbonnementUpgradabillity} from '../../models/abonnement/enums/abonnement.upgrade.enum';
 
 @Injectable()
 export class AbonnementenService extends RestfulClientService {
@@ -61,7 +62,7 @@ export class AbonnementenService extends RestfulClientService {
   }
 
   /**
-   * Return a specific Abonnement.
+   * Terminate a specific Abonnement.
    *
    * @param {Abonnement} abonnement
    * @return {Promise<Abonnement>} A specific Abonnement
@@ -72,6 +73,27 @@ export class AbonnementenService extends RestfulClientService {
 
     try {
       const data: Abonnement = await this.httpClient.delete<Abonnement>(endpointUrl, {params: params}).toPromise();
+      return data;
+    } catch (err) {
+      this.handleErrors(err);
+      return Promise.reject(err);
+    }
+  }
+
+  /**
+   * Verdubbel a specific Abonnement.
+   *
+   * @param {Abonnement} abonnement
+   * @return {Promise<Abonnement>} A specific Abonnement
+   */
+  public async upgadeAbonnement(id: number): Promise<Abonnement> {
+    const endpointUrl = this.getAbonnementEndpoint(id);
+    const params = this.createtokenParam();
+
+    try {
+      const data: Abonnement = await this.httpClient.post<Abonnement>(endpointUrl,
+        JSON.stringify({'verdubbeling': AbonnementUpgradabillity.UPGRADED}),
+        {params: params}).toPromise();
       return data;
     } catch (err) {
       this.handleErrors(err);
