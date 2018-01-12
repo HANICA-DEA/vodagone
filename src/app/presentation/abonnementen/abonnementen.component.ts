@@ -26,10 +26,6 @@ export class AbonnementenComponent implements OnInit {
     this.updateAbonnementen();
   }
 
-  private updateAbonnementen(): void {
-    this.abonnementenService.getAbonnementen().then(abonnementen => this.setAbonnementen(abonnementen))
-      .catch(any => this.setEmptyAbonnementen());
-  }
 
   /**
    * Select a abonnement from the list.
@@ -39,6 +35,13 @@ export class AbonnementenComponent implements OnInit {
   public onAbonnementSelected(abonnement: Abonnement): void {
     this.selectedAbonnementChange.emit(abonnement.id);
     this.selectedAbonnementId = abonnement.id;
+  }
+
+  /**
+   * Request a new Abonnement.
+   */
+  public onNewAbonnementRequested(): void {
+
   }
 
   private setAbonnementen(abonn: Abonnementen): void {
@@ -65,5 +68,10 @@ export class AbonnementenComponent implements OnInit {
 
   private setEmptyAbonnementen(): void {
     this.abonnementen = new AbonnementenImpl();
+  }
+
+  private updateAbonnementen(): void {
+    this.abonnementenService.getAbonnementen().then(abonnementen => this.setAbonnementen(abonnementen))
+      .catch(any => this.setEmptyAbonnementen());
   }
 }

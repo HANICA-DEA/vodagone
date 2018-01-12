@@ -23,6 +23,11 @@
       </button>
     </mat-list-item>
   </mat-nav-list>
+  <button mat-raised-button
+          color="accent"
+          (click)="onNewAbonnementRequested()">
+    Abonnement aanvragen
+  </button>
 
   <div class="flex-item totaalBedrag mat-body-1">
     Totaalbedrag: {{ abonnementen.totalPrice | currency:'EUR' }}
