@@ -49,5 +49,6 @@ export class SelectAbonnementComponent implements OnInit {
   private setAbonnementen(abonnementen: Abonnement[]): void {
 
     this.abonnementen = abonnementen;
+    this.selectedAbonnement = undefined;
   }
 }
