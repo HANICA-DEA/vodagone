@@ -115,8 +115,8 @@ It will expect a response containing the complete list of all Abonnementen and t
   "totalPrice"  :42.37}
 ```
 
-* The property `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
-* The property `totalPrice` should be in euro's and should be point separated.
+* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
+* The field `totalPrice` should be in euro's and should be point separated.
 
 
 ##### Get a specific Abonnement from the logged in User
@@ -145,9 +145,10 @@ It will expect a response containing the complete Abonnement for the given id:
     "status": "actief"
 }
 ```
-* The property `startDatum` should be a date and formatted as `yyyy-MM-dd`.
-* The property `status` should be a string and only contain either `"opgezegd"`,  `"actief"` or `"proef"`.
-* The property `verdubbeling` should be a string and only contain either `"standaard"`, `"verdubbeld"`, `"niet-beschikbaar"`.
+
+* The field `startDatum` should be a date and formatted as `yyyy-MM-dd`.
+* The field `status` should be a string and only contain either `"opgezegd"`,  `"actief"` or `"proef"`.
+* The field `verdubbeling` should be a string and only contain either `"standaard"`, `"verdubbeld"`, `"niet-beschikbaar"`.
 
 ##### Terminate an Abonnement
 
@@ -159,7 +160,7 @@ method: DELETE
 query parameter:  token
 ```
 
-It will expect a response containing the complete Abonnement for the given id. Because the Abonnement has been terminated, the `status` should now read `opgezegd`.
+It will expect a response containing the complete Abonnement for the given id. Because the Abonnement has been terminated, the field `status` should now read `opgezegd`.
 
 ```
 {
@@ -191,7 +192,7 @@ The body will contain an object of the form:
 }
 ```
 
-It will expect a response containing the complete Abonnement that has been upgraded. Because the Abonnement has been upgraded, the `verdubbeling` should now read `verdubbeld`. Futhermore, the field `price` should now show a increase of 50%.
+It will expect a response containing the complete Abonnement that has been upgraded. Because the Abonnement has been upgraded, the field `verdubbeling` should now read `verdubbeld`. Furthermore, the field `price` should now show an increase of 50%.
 
 ```
 {
@@ -239,9 +240,9 @@ It will expect a response containing an array Abonnementen:
 ]
 ```
 
-* The property `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
+* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
 
-If the query parameter `filter` is not-empty, only Abonnementen that contain the given filter string in either the `aanbieder` or `dienst` should be returned.
+If the query parameter `filter` is non empty, only Abonnementen that contain the given filter string in either the `aanbieder` or `dienst` should be returned.
 
 #### Abonnees
 
