@@ -68,7 +68,9 @@ export class AbonnementenService extends RestfulClientService {
    */
   public async getAllAbonnementen(filter: string): Promise<Abonnement[]> {
     const endpointUrl = this.getAllAbonnementEndpoint();
-    const params = this.createtokenParam();
+    let params = this.createtokenParam();
+
+    params = params.set('filter', filter);
 
     try {
       const data: Abonnement[] = await this.httpClient.get<Abonnement[]>(endpointUrl, {params: params}).toPromise();

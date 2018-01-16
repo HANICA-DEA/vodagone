@@ -2,3 +2,16 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+.filter {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+
+  .mat-form-field {
+    font-size: 14px;
+    flex-grow: 1;
+    margin-left: 0;
+  }
+}

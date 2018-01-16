@@ -81,9 +81,9 @@ request.
 
 #### Abonnementen
 
-##### Get all Abonnementen
+##### Get all Abonnementen from the logged in User
 
-To acquire a list of all Abonnementen:
+To acquire a list of all Abonnementen from the logged in User:
 
 ```
 url:    /abonnementen 
@@ -119,10 +119,10 @@ It will expect a response containing the complete list of all Abonnementen and t
 * The property `totalPrice` should be in euro's and should be point separated.
 
 
-##### Get a specific Abonnement
+##### Get a specific Abonnement from the logged in User
 
 Notice that the Abonnementen above only contain a small part of all information 
-available. To acquire a complete Abonnement:
+available. To acquire the complete Abonnement:
 
 ```
 url:    /abonnementen/:id
@@ -205,6 +205,43 @@ It will expect a response containing the complete Abonnement that has been upgra
     "status": "actief"
 }
 ```
+
+##### Get all available Abonnementen
+
+To acquire a list of all available Abonnementen:
+
+```
+url:    /abonnementen/all 
+method: GET
+query parameter:  token
+query parameter:  filter
+```
+
+It will expect a response containing an array Abonnementen:
+
+```
+[
+  {
+    "id": 0,
+    "aanbieder": "vodafone",
+    "dienst": "Mobiele telefonie 100"
+  },
+  {
+    "id": 1,
+    "aanbieder": "vodafone",
+    "dienst": "Mobiele telefonie 250"
+  },
+  {
+    "id": 2,
+    "aanbieder": "ziggo",
+    "dienst": "Kabel-internet (download 300 Mbps)"
+ },
+]
+```
+
+* The property `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
+
+If the query parameter `filter` is not-empty, only Abonnementen that contain the given filter string in either the `aanbieder` or `dienst` should be returned.
 
 #### Abonnees
 

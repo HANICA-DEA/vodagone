@@ -9,6 +9,7 @@ import {AbonnementComponent} from './presentation/abonnement/abonnement.componen
 import {AbonnementenComponent} from './presentation/abonnementen/abonnementen.component';
 import {AbonnementenOverviewComponent} from './presentation/abonnementen-overview/abonnementen-overview.component';
 import {AbonnementenService} from './services/abonnementen/abonnementen.service';
+import {AbonneeService} from './services/abonee/abonee.service';
 
 describe('VodagoneComponent', () => {
   beforeEach(async(() => {
@@ -26,6 +27,7 @@ describe('VodagoneComponent', () => {
       ],
       providers: [
         AbonnementenService,
+        AbonneeService,
         LoginService,
         LoggingService
       ]
