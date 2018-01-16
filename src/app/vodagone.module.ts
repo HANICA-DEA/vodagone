@@ -11,21 +11,24 @@ import {AbonnementenOverviewComponent} from './presentation/abonnementen-overvie
 import {AbonnementenComponent} from './presentation/abonnementen/abonnementen.component';
 import {AbonnementComponent} from './presentation/abonnement/abonnement.component';
 import {AbonnementenService} from './services/abonnementen/abonnementen.service';
-import {AbonneesComponent} from './presentation/abonees/abonnees.component';
+import {SelectAbonneeComponent} from './presentation/select-abonnee/select-abonnee.component';
 import {AbonneeService} from './services/abonee/abonee.service';
+import {SelectAbonnementComponent} from './presentation/select-abonnement/select-abonnement.component';
 
 
 @NgModule({
   declarations: [
     VodagoneComponent,
     LoginComponent,
-    AbonneesComponent,
+    SelectAbonneeComponent,
     AbonnementenOverviewComponent,
     AbonnementenComponent,
-    AbonnementComponent
+    AbonnementComponent,
+    SelectAbonnementComponent
   ],
   entryComponents: [
-    AbonneesComponent
+    SelectAbonneeComponent,
+    SelectAbonnementComponent
   ],
   imports: [
     VodagoneAngularModule,

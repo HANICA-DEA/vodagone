@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import {async, TestBed} from '@angular/core/testing';
-import {AbonneesComponent} from './abonnees.component';
+import {SelectAbonneeComponent} from './select-abonnee.component';
 import {NgModule} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {VodagoneAngularModule} from '../../modules/angular.module';
@@ -10,20 +10,20 @@ import {AbonneeService} from '../../services/abonee/abonee.service';
 
 @NgModule({
   entryComponents: [
-    AbonneesComponent
+    SelectAbonneeComponent
   ],
 })
 export class TestModule {
 }
 
-describe('AbonneesComponent', () => {
-  let component: AbonneesComponent;
+describe('SelectAbonneeComponent', () => {
+  let component: SelectAbonneeComponent;
   let dialog: MatDialog;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AbonneesComponent
+        SelectAbonneeComponent
       ],
       imports: [
         VodagoneAngularModule,
@@ -39,7 +39,7 @@ describe('AbonneesComponent', () => {
 
   beforeEach(() => {
     dialog = TestBed.get(MatDialog);
-    const dialogRef = dialog.open(AbonneesComponent);
+    const dialogRef = dialog.open(SelectAbonneeComponent);
     component = dialogRef.componentInstance;
   });
 

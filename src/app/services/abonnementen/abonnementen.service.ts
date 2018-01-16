@@ -62,6 +62,24 @@ export class AbonnementenService extends RestfulClientService {
   }
 
   /**
+   * Return a complete list of Abonnementen.
+   *
+   * @return {Promise<Abonnement[]>} The complete list of abonnementen.
+   */
+  public async getAllAbonnementen(filter: string): Promise<Abonnement[]> {
+    const endpointUrl = this.getAllAbonnementEndpoint();
+    const params = this.createtokenParam();
+
+    try {
+      const data: Abonnement[] = await this.httpClient.get<Abonnement[]>(endpointUrl, {params: params}).toPromise();
+      return data;
+    } catch (err) {
+      this.handleErrors(err);
+      return Promise.reject(err);
+    }
+  }
+
+  /**
    * Terminate a specific Abonnement.
    *
    * @param {Abonnement} abonnement
@@ -99,6 +117,12 @@ export class AbonnementenService extends RestfulClientService {
       this.handleErrors(err);
       return Promise.reject(err);
     }
+  }
+
+  private getAllAbonnementEndpoint(): string {
+    const endpointUrl = this.createEndpointUrl(VodagoneConstants.API_ABONNEMENTEN_ALL);
+
+    return endpointUrl;
   }
 
   private getAbonnementEndpoint(id: number): string {

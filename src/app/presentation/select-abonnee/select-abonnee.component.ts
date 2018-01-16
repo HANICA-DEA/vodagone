@@ -5,16 +5,16 @@ import {AbonneeService} from '../../services/abonee/abonee.service';
 
 @Component({
   selector: 'app-abonnees',
-  templateUrl: './abonnees.component.html',
-  styleUrls: ['./abonnees.component.scss']
+  templateUrl: './select-abonnee.component.html',
+  styleUrls: ['./select-abonnee.component.scss']
 })
-export class AbonneesComponent implements OnInit {
+export class SelectAbonneeComponent implements OnInit {
 
   public abonnees: Abonnee[];
   public selectedAbonnee: Abonnee;
 
   constructor(private abonneeService: AbonneeService,
-              private dialogRef: MatDialogRef<AbonneesComponent>) {
+              private dialogRef: MatDialogRef<SelectAbonneeComponent>) {
   }
 
   ngOnInit(): void {

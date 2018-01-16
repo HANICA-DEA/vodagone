@@ -8,5 +8,6 @@ export class VodagoneConstants {
 
   public static API_LOGIN = '/login';
   public static API_ABONNEMENTEN = '/abonnementen';
+  public static API_ABONNEMENTEN_ALL = VodagoneConstants.API_ABONNEMENTEN + '/all';
   public static API_ABONNEES = '/abonnees';
 }

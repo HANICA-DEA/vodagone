@@ -5,7 +5,7 @@ import {Aanbieder} from '../../models/abonnement/enums/aanbieder.enum';
 import {AbonnementStatus} from '../../models/abonnement/enums/abonnement.status.enum';
 import {AbonnementenService} from '../../services/abonnementen/abonnementen.service';
 import {MatDialog} from '@angular/material';
-import {AbonneesComponent} from '../abonees/abonnees.component';
+import {SelectAbonneeComponent} from '../select-abonnee/select-abonnee.component';
 import {AbonneeService} from '../../services/abonee/abonee.service';
 import {AbonnementUpgradabillity} from '../../models/abonnement/enums/abonnement.upgrade.enum';
 
@@ -45,7 +45,7 @@ export class AbonnementComponent {
 
   public onShare(): void {
 
-    const aboneesDialogRef = this.dialog.open(AbonneesComponent, {
+    const aboneesDialogRef = this.dialog.open(SelectAbonneeComponent, {
       disableClose: false,
     });
 

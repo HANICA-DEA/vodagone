@@ -4,6 +4,8 @@ import {AbonnementenService} from '../../services/abonnementen/abonnementen.serv
 import {Abonnement} from '../../models/abonnement/abonnement.interface';
 import {AbonnementenImpl} from '../../models/abonnementen/abonnementen.model';
 import {Aanbieder} from '../../models/abonnement/enums/aanbieder.enum';
+import {SelectAbonnementComponent} from '../select-abonnement/select-abonnement.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-abonnementen',
@@ -18,7 +20,7 @@ export class AbonnementenComponent implements OnInit {
 
   @Output() selectedAbonnementChange = new EventEmitter<number>();
 
-  constructor(private abonnementenService: AbonnementenService) {
+  constructor(private abonnementenService: AbonnementenService, public dialog: MatDialog) {
     this.setEmptyAbonnementen();
   }
 
@@ -41,7 +43,16 @@ export class AbonnementenComponent implements OnInit {
    * Request a new Abonnement.
    */
   public onNewAbonnementRequested(): void {
+    const aboneesDialogRef = this.dialog.open(SelectAbonnementComponent, {
+      disableClose: false,
+    });
 
+    aboneesDialogRef.afterClosed().subscribe(abonnement => {
+        if (abonnement) {
+          console.log('Received a new abonnement: ', abonnement);
+        }
+      }
+    );
   }
 
   private setAbonnementen(abonn: Abonnementen): void {

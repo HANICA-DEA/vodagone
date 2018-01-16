@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Settings} from './models/settings/settings.interface.model';
 import {LoginService} from './services/login/login.service';
 import {MatSnackBar} from '@angular/material';
+import {AbonnementenService} from './services/abonnementen/abonnementen.service';
+import {AbonneeService} from './services/abonee/abonee.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,8 @@ export class VodagoneComponent implements OnInit {
   public user: string;
 
   constructor(private loginService: LoginService,
+              private abonnementenService: AbonnementenService,
+              private abonneeService: AbonneeService,
               public snackBar: MatSnackBar) {
   }
 
@@ -30,6 +34,8 @@ export class VodagoneComponent implements OnInit {
 
   private initErrorSnackbar(): void {
     this.loginService.restError$.subscribe(error => this.showError(error));
+    this.abonneeService.restError$.subscribe(error => this.showError(error));
+    this.abonnementenService.restError$.subscribe(error => this.showError(error));
   }
 
   private initSettings(): void {
