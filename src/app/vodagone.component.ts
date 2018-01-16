@@ -56,6 +56,6 @@ export class VodagoneComponent implements OnInit {
   }
 
   private showError(error: number): void {
-    this.snackBar.open('Http status code ' + error, 'close');
+    this.snackBar.open('Http status code ' + error, 'sluit');
   }
 }
