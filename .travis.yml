@@ -29,4 +29,4 @@ script:
   - ng lint
   - npm run test-coverage
   - ng build --target production --base-href "/vodagone/"
- -  curl "http://ci.icaprojecten.nl/jenkins/job/OOSE-Vodagone-client/build?token=$JENKINS_TOKEN"
+  - curl "http://ci.icaprojecten.nl/jenkins/job/OOSE-Vodagone-client/build?token=$JENKINS_TOKEN"
