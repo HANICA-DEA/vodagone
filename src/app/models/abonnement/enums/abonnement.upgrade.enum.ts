@@ -1,5 +1,5 @@
 export enum AbonnementUpgradabillity {
   UPGRADED = 'verdubbeld',
-  STANDARD = 'standaard',
+  STANDAARD = 'standaard',
   UNAVAILABLE = 'niet-beschikbaar'
 }
