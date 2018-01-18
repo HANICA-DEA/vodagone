@@ -7,7 +7,7 @@ of the course OOSE-DEA at the [HAN University of Applied Sciences](https://www.h
 
 Use this version if you do not want to install it locally:
 
--- ADD HERE AS SOON AS ONE IS AVAILABLE
+[http://ci.icaprojecten.nl/vodagone/](http://ci.icaprojecten.nl/vodagone/)
 
 ## Enabling CORS headers in your JavaEE container
 
