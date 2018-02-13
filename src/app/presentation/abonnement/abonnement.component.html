@@ -16,7 +16,7 @@
     </button>
     <button mat-mini-fab
             color="warn"
-            [disabled]="abonnement.status !== abonnementStatus.OPGEZEGD"
+            [disabled]="abonnement.status == abonnementStatus.OPGEZEGD"
             (click)="onTerminate()"
             matTooltip="Terminate subscription">
       <mat-icon>delete</mat-icon>
