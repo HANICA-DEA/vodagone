@@ -1,20 +1,18 @@
 language: node_js
 sudo: required
-dist: trusty
+group: travis_lts
 
 node_js:
   - '7'
 
 env:
   - CXX=g++-4.8
-
 addons:
-  chrome: stable
   apt:
-      sources:
-        - ubuntu-toolchain-r-test
-      packages:
-        - g++-4.8
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 branches:
   only:
@@ -24,9 +22,14 @@ before_install:
  - export DISPLAY=:99.0
  - sh -e /etc/init.d/xvfb start
 
+
 script:
   - ng -v
   - ng lint
   - npm run test-coverage
   - ng build --target production --base-href "/vodagone/"
   - curl "http://ci.icaprojecten.nl/jenkins/job/OOSE-Vodagone-client/build?token=$JENKINS_TOKEN"
+
+after_success:
+    npm run coveralls
+    [ $TRAVIS_BRANCH = master ] && bash deploy.sh
