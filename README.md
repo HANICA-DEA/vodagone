@@ -1,4 +1,4 @@
-# OOSE DEA Vodagone [![Build Status](https://travis-ci.com/meronbrouwer/vodagone.svg?token=utxyypyqMC1kSyjpgbMm&branch=master)](https://travis-ci.com/meronbrouwer/vodagone) [![Coverage Status](https://coveralls.io/repos/github/meronbrouwer/vodagone/badge.svg?branch=master)](https://coveralls.io/github/meronbrouwer/vodagone?branch=master)
+# OOSE DEA Vodagone [![Build Status](https://travis-ci.org/meronbrouwer/vodagone.svg?branch=master)](https://travis-ci.org/meronbrouwer/vodagone) [![Coverage Status](https://coveralls.io/repos/github/meronbrouwer/vodagone/badge.svg?branch=master)](https://coveralls.io/github/meronbrouwer/vodagone?branch=master)
 
 This repository contains a front-end for the final programming assignment 
 of the course OOSE-DEA at the [HAN University of Applied Sciences](https://www.han.nl/).
