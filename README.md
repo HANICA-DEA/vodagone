@@ -280,7 +280,7 @@ method:           POST
 query parameter:  token
 ```
 
-The body should contain the new playlist:
+The body should contain the id of the new Abonnement:
 ```
 {
   "id"    : 1
