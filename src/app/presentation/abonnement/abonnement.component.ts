@@ -51,7 +51,7 @@ export class AbonnementComponent {
 
     aboneesDialogRef.afterClosed().subscribe(abonnee => {
         if (abonnee) {
-          this.abonneeService.addAbonnement(abonnee, this.abonnement);
+          this.abonneeService.shareAbonnement(abonnee, this.abonnement);
         }
       }
     );

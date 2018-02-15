@@ -40,9 +40,9 @@ export class AbonneeService extends RestfulClientService {
   }
 
   /**
-   * Add an Abonnement to an Abonnee.
+   * Share an Abonnement with an Abonnee.
    */
-  public addAbonnement(abonnee: Abonnee, abonnement: Abonnement): Promise<any> {
+  public shareAbonnement(abonnee: Abonnee, abonnement: Abonnement): Promise<any> {
     const endpointUrl = this.getAbonneeEndpoint(abonnee.id);
     const params = this.createtokenParam();
 

@@ -27,7 +27,7 @@ export class AbonnementenService extends RestfulClientService {
   /**
    * Return a complete list of Abonnementen.
    *
-   * @return {Promise<Abonnementen>} The complete list of abonnementen.
+   * @return {Promise<Abonnementen>} The complete list of Abonnementen.
    */
   public async getAbonnementen(): Promise<Abonnementen> {
     const endpointUrl = this.getAbonnementEndpoint(undefined);
@@ -35,6 +35,27 @@ export class AbonnementenService extends RestfulClientService {
 
     try {
       const data: Abonnementen = await this.httpClient.get<Abonnementen>(endpointUrl, {params: params}).toPromise();
+      return data;
+    } catch (err) {
+      this.handleErrors(err);
+      return Promise.reject(err);
+    }
+  }
+
+  /**
+   * Verdubbel a specific Abonnement.
+   *
+   * @param {Abonnement} abonnement
+   * @return {Promise<Abonnementen>} The new complete list of Abonnementen.
+   */
+  public async addAbonnement(abonnement: Abonnement): Promise<Abonnementen> {
+    const endpointUrl = this.getAbonnementEndpoint(undefined);
+    const params = this.createtokenParam();
+
+    try {
+      const data: Abonnementen = await this.httpClient.post<Abonnementen>(endpointUrl,
+        JSON.stringify(abonnement),
+        {params: params}).toPromise();
       return data;
     } catch (err) {
       this.handleErrors(err);

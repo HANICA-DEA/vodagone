@@ -20,7 +20,8 @@ export class AbonnementenComponent implements OnInit {
 
   @Output() selectedAbonnementChange = new EventEmitter<number>();
 
-  constructor(private abonnementenService: AbonnementenService, public dialog: MatDialog) {
+  constructor(private abonnementenService: AbonnementenService,
+              public dialog: MatDialog) {
     this.setEmptyAbonnementen();
   }
 
@@ -50,6 +51,9 @@ export class AbonnementenComponent implements OnInit {
     aboneesDialogRef.afterClosed().subscribe(abonnement => {
         if (abonnement) {
           console.log('Received a new abonnement: ', abonnement);
+
+          this.abonnementenService.addAbonnement(abonnement).then(abonnementen => this.setAbonnementen(abonnementen))
+            .catch(any => this.setEmptyAbonnementen());
         }
       }
     );

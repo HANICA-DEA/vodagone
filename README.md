@@ -111,7 +111,55 @@ It will expect a response containing the complete list of all Abonnementen and t
 * The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
 * The field `totalPrice` should be in euro's and should be point separated.
 
+##### Add an Abonnement
 
+To add an Abonnement:
+
+```
+url:    /abonnementen
+method: PST
+query parameter:  token
+```
+
+The body will contain an object of the form:
+```
+{                
+  "id": 3,
+  "aanbieder": "vodafone",
+  "dienst": "Glasvezel-internet (download 500 Mbps)"                
+}
+```
+It will expect a response containing the updated complete list of all Abonnementen and the updated totalPrice:
+
+```
+{
+  "abonnementen" :[
+               {
+                  "id": 0,
+                  "aanbieder": "vodafone",
+                  "dienst": "Mobiele telefonie 100"
+               },
+               {
+                  "id": 1,
+                  "aanbieder": "vodafone",
+                  "dienst": "Mobiele telefonie 250"
+               },
+               {
+                  "id": 2,
+                  "aanbieder": "ziggo",
+                  "dienst": "Kabel-internet (download 300 Mbps)"
+               },
+               {                 
+                  "id": 3,
+                  "aanbieder": "vodafone",
+                  "dienst": "Glasvezel-internet (download 500 Mbps)"                
+                }
+              ],
+  "totalPrice"  :62.37}
+```
+
+* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
+* The field `totalPrice` should be in euro's and should be point separated.
 ##### Get a specific Abonnement from the logged in User
 
 Notice that the Abonnementen above only contain a small part of all information 
@@ -271,9 +319,9 @@ It will expect a response containing an array of all Abonnees:
 ]
 ```
 
-##### Add an Abonnement to an Abonnee
+##### Sare an Abonnement with an Abonnee
 
-To add an Abonnement to an Abonnee:
+To share an Abonnement with an Abonnee:
 ```
 url:              /abonnee/:id
 method:           POST
