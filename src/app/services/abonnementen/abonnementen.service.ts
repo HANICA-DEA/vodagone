@@ -55,7 +55,10 @@ export class AbonnementenService extends RestfulClientService {
     try {
       const data: Abonnementen = await this.httpClient.post<Abonnementen>(endpointUrl,
         JSON.stringify(abonnement),
-        {params: params}).toPromise();
+        {
+          headers: this.headers,
+          params: params
+        }).toPromise();
       return data;
     } catch (err) {
       this.handleErrors(err);
