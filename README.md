@@ -319,11 +319,11 @@ It will expect a response containing an array of all Abonnees:
 ]
 ```
 
-##### Sare an Abonnement with an Abonnee
+##### Share an Abonnement with an Abonnee
 
 To share an Abonnement with an Abonnee:
 ```
-url:              /abonnee/:id
+url:              /abonnees/:id
 method:           POST
 query parameter:  token
 ```
