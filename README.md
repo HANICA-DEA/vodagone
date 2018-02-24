@@ -20,7 +20,7 @@ In general the API must conform the standards of a RESTful API. It will use HTTP
 
 ### Methods used
 
-* GET : In case of acquiring one, or multiple resources.
+* GET: In case of acquiring one, or multiple resources.
 * POST: In case of creating a resource.
 * PUT: In case of modifying  a resource.
 * DELETE: In case of deleting a resource.
@@ -134,7 +134,7 @@ It will expect a response containing the updated complete list of all Abonnement
 
 ```json
 {
-  "abonnementen" :[
+  "abonnementen": [
     {
       "id": 0,
       "aanbieder": "vodafone",
