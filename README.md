@@ -53,7 +53,7 @@ method: POST
 
 It will perform a request with an object in the body of the form:
 
-```
+```json
 {
   "user":     "meron", 
   "password": "MySuperSecretPassword12341"
@@ -62,7 +62,7 @@ It will perform a request with an object in the body of the form:
 
 It will expect a response containing an object of the form:
 
-```
+```json
 {
   "token":  "1234-1234-1234", 
   "user":   "Meron Brouwer"
@@ -86,7 +86,7 @@ query parameter:  token
 
 It will expect a response containing the complete list of all Abonnementen and the totalPrice:
 
-```
+```json
 {
   "abonnementen" :[
                {
@@ -122,7 +122,7 @@ query parameter:  token
 ```
 
 The body will contain an object of the form:
-```
+```json
 {                
   "id": 3,
   "aanbieder": "vodafone",
@@ -131,7 +131,7 @@ The body will contain an object of the form:
 ```
 It will expect a response containing the updated complete list of all Abonnementen and the updated totalPrice:
 
-```
+```json
 {
   "abonnementen" :[
                {
@@ -173,7 +173,7 @@ query parameter:  token
 
 It will expect a response containing the complete Abonnement for the given id:
 
-```
+```json
 {
     "id": 0,
     "aanbieder": "vodafone",
@@ -204,7 +204,7 @@ query parameter:  token
 It will expect a response containing the complete Abonnement for the given id:
 Because the Abonnement has been terminated, the field `status` should now read `opgezegd`.
 
-```
+```json
 {
     "id": 0,
     "aanbieder": "vodafone",
@@ -228,7 +228,7 @@ query parameter:  token
 ```
 
 The body will contain an object of the form:
-```
+```json
 {
     "verdubbeling": "verdubbeld"
 }
@@ -237,7 +237,7 @@ The body will contain an object of the form:
 It will expect a response containing the complete Abonnement that has been upgraded:
 Because the Abonnement has been upgraded, the field `verdubbeling` should now read `verdubbeld`. Furthermore, the field `price` should now show an increase of 50%.
 
-```
+```json
 {
     "id": 0,
     "aanbieder": "vodafone",
@@ -263,7 +263,7 @@ query parameter:  filter
 
 It will expect a response containing an array Abonnementen:
 
-```
+```json
 [
   {
     "id": 0,
@@ -301,7 +301,7 @@ query parameter:  token
 
 It will expect a response containing an array of all Abonnees:
 
-```
+```json
 [
   {
     "id": 0,
@@ -331,7 +331,7 @@ query parameter:  token
 ```
 
 The body should contain the id of the new Abonnement:
-```
+```json
 {
   "id"    : 1
 }
