@@ -1,6 +1,6 @@
 # OOSE DEA Vodagone [![Build Status](https://travis-ci.org/meronbrouwer/vodagone.svg?branch=master)](https://travis-ci.org/meronbrouwer/vodagone) [![Coverage Status](https://coveralls.io/repos/github/meronbrouwer/vodagone/badge.svg?branch=master)](https://coveralls.io/github/meronbrouwer/vodagone?branch=master)
 
-This repository contains a front-end for the final programming assignment 
+This repository contains a front-end for the final programming assignment
 of the course OOSE-DEA at the [HAN University of Applied Sciences](https://www.han.nl/).
 
 ## Hosted version
@@ -12,13 +12,13 @@ Use this version if you do not want to install it locally:
 ## Enabling CORS headers in your JavaEE container
 
 To use this Vodagone Client with your own Vodagone Server, you will need to enable CORS headers
-in your JavaEE container. 
- 
+in your JavaEE container.
+
 ## API
 
 In general the API must conform the standards of a RESTful API. It will use HTTP methods and expects HTTP statuscodes in its response.
 
-### Methods used 
+### Methods used
 
 * GET : In case of acquiring one, or multiple resources.
 * POST: In case of creating a resource.
@@ -47,7 +47,7 @@ The following endpoints are expected:
 #### Login
 
 ```
-url:    /login 
+url:    /login
 method: POST
 ```
 
@@ -55,7 +55,7 @@ It will perform a request with an object in the body of the form:
 
 ```json
 {
-  "user":     "meron", 
+  "user": "meron",
   "password": "MySuperSecretPassword12341"
 }
 ```
@@ -64,8 +64,8 @@ It will expect a response containing an object of the form:
 
 ```json
 {
-  "token":  "1234-1234-1234", 
-  "user":   "Meron Brouwer"
+  "token": "1234-1234-1234",
+  "user": "Meron Brouwer"
 }
 ```
 
@@ -79,7 +79,7 @@ request.
 To acquire a list of all Abonnementen from the logged in User:
 
 ```
-url:    /abonnementen 
+url:    /abonnementen
 method: GET
 query parameter:  token
 ```
@@ -88,24 +88,25 @@ It will expect a response containing the complete list of all Abonnementen and t
 
 ```json
 {
-  "abonnementen" :[
-               {
-                  "id": 0,
-                  "aanbieder": "vodafone",
-                  "dienst": "Mobiele telefonie 100"
-               },
-               {
-                  "id": 1,
-                  "aanbieder": "vodafone",
-                  "dienst": "Mobiele telefonie 250"
-               },
-               {
-                  "id": 2,
-                  "aanbieder": "ziggo",
-                  "dienst": "Kabel-internet (download 300 Mbps)"
-               },
-              ],
-  "totalPrice"  :42.37}
+  "abonnementen": [
+    {
+      "id": 0,
+      "aanbieder": "vodafone",
+      "dienst": "Mobiele telefonie 100"
+    },
+    {
+      "id": 1,
+      "aanbieder": "vodafone",
+      "dienst": "Mobiele telefonie 250"
+    },
+    {
+      "id": 2,
+      "aanbieder": "ziggo",
+      "dienst": "Kabel-internet (download 300 Mbps)"
+    },
+  ],
+  "totalPrice"  :42.37
+}
 ```
 
 * The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo"`.
@@ -134,35 +135,36 @@ It will expect a response containing the updated complete list of all Abonnement
 ```json
 {
   "abonnementen" :[
-               {
-                  "id": 0,
-                  "aanbieder": "vodafone",
-                  "dienst": "Mobiele telefonie 100"
-               },
-               {
-                  "id": 1,
-                  "aanbieder": "vodafone",
-                  "dienst": "Mobiele telefonie 250"
-               },
-               {
-                  "id": 2,
-                  "aanbieder": "ziggo",
-                  "dienst": "Kabel-internet (download 300 Mbps)"
-               },
-               {                 
-                  "id": 3,
-                  "aanbieder": "vodafone",
-                  "dienst": "Glasvezel-internet (download 500 Mbps)"                
-                }
-              ],
-  "totalPrice"  :62.37}
+    {
+      "id": 0,
+      "aanbieder": "vodafone",
+      "dienst": "Mobiele telefonie 100"
+    },
+    {
+      "id": 1,
+      "aanbieder": "vodafone",
+      "dienst": "Mobiele telefonie 250"
+    },
+    {
+      "id": 2,
+      "aanbieder": "ziggo",
+      "dienst": "Kabel-internet (download 300 Mbps)"
+    },
+    {                 
+      "id": 3,
+      "aanbieder": "vodafone",
+      "dienst": "Glasvezel-internet (download 500 Mbps)"                
+    }
+  ],
+  "totalPrice"  :62.37
+}
 ```
 
 * The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo"`.
 * The field `totalPrice` should be in euros and should be point separated.
 ##### Get a specific Abonnement from the logged in User
 
-Notice that the Abonnementen above only contain a small part of all information 
+Notice that the Abonnementen above only contain a small part of all information
 available. To acquire the complete Abonnement:
 
 ```
@@ -175,15 +177,15 @@ It will expect a response containing the complete Abonnement for the given id:
 
 ```json
 {
-    "id": 0,
-    "aanbieder": "vodafone",
-    "dienst": "Mobiele telefonie 100",
-    "prijs" : "€5,- per maand",
-    "startDatum": "2017-01-01",
-    "verdubbeling": "standaard",
-    "verdubbeld": false,
-    "deelbaar": false,
-    "status": "actief"
+  "id": 0,
+  "aanbieder": "vodafone",
+  "dienst": "Mobiele telefonie 100",
+  "prijs" : "€5,- per maand",
+  "startDatum": "2017-01-01",
+  "verdubbeling": "standaard",
+  "verdubbeld": false,
+  "deelbaar": false,
+  "status": "actief"
 }
 ```
 
@@ -206,14 +208,14 @@ Because the Abonnement has been terminated, the field `status` should now read `
 
 ```json
 {
-    "id": 0,
-    "aanbieder": "vodafone",
-    "dienst": "Mobiele telefonie 100",
-    "prijs" : "€5,- per maand",
-    "startDatum": "2017-01-01",
-    "verdubbeling": "standaard",
-    "deelbaar": false,
-    "status": "opgezegd"
+  "id": 0,
+  "aanbieder": "vodafone",
+  "dienst": "Mobiele telefonie 100",
+  "prijs" : "€5,- per maand",
+  "startDatum": "2017-01-01",
+  "verdubbeling": "standaard",
+  "deelbaar": false,
+  "status": "opgezegd"
 }
 ```
 
@@ -230,7 +232,7 @@ query parameter:  token
 The body will contain an object of the form:
 ```json
 {
-    "verdubbeling": "verdubbeld"
+  "verdubbeling": "verdubbeld"
 }
 ```
 
@@ -239,14 +241,14 @@ Because the Abonnement has been upgraded, the field `verdubbeling` should now re
 
 ```json
 {
-    "id": 0,
-    "aanbieder": "vodafone",
-    "dienst": "Mobiele telefonie 250",
-    "prijs" : "€15,- per maand",
-    "startDatum": "2017-01-01",
-    "verdubbeling": "verdubbeld",
-    "deelbaar": false,
-    "status": "actief"
+  "id": 0,
+  "aanbieder": "vodafone",
+  "dienst": "Mobiele telefonie 250",
+  "prijs" : "€15,- per maand",
+  "startDatum": "2017-01-01",
+  "verdubbeling": "verdubbeld",
+  "deelbaar": false,
+  "status": "actief"
 }
 ```
 
@@ -255,7 +257,7 @@ Because the Abonnement has been upgraded, the field `verdubbeling` should now re
 To acquire a list of all available Abonnementen:
 
 ```
-url:    /abonnementen/all 
+url:    /abonnementen/all
 method: GET
 query parameter:  token
 query parameter:  filter
@@ -279,7 +281,7 @@ It will expect a response containing an array Abonnementen:
     "id": 2,
     "aanbieder": "ziggo",
     "dienst": "Kabel-internet (download 300 Mbps)"
- },
+  }
 ]
 ```
 
@@ -294,7 +296,7 @@ If the query parameter `filter` is non empty, only Abonnementen that contain the
 To acquire a list of all Abonnees:
 
 ```
-url:    /abonnees 
+url:    /abonnees
 method: GET
 query parameter:  token
 ```
@@ -333,7 +335,7 @@ query parameter:  token
 The body should contain the id of the new Abonnement:
 ```json
 {
-  "id"    : 1
+  "id": 1
 }
 ```
 
