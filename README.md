@@ -16,7 +16,7 @@ in your JavaEE container.
  
 ## API
 
-In general the API must conform the standards of a RESTFull API. It will use HTTP methods and expects HTTP statuscodes in its response.
+In general the API must conform the standards of a RESTful API. It will use HTTP methods and expects HTTP statuscodes in its response.
 
 ### Methods used 
 
@@ -39,10 +39,10 @@ a missing query-parameter for the token.
 
 ### HATEOAS
 
-Those that are aware of the concept HATEOAS might notice that this API is not HATEOAS. That is not a problem, HATEOAS is not within the scope of this excercise.
+Those that are aware of the concept HATEOAS might notice that this API is not HATEOAS. That is not a problem, HATEOAS is not within the scope of this exercise.
 
 ### Endpoints
-The following endpoints are expected
+The following endpoints are expected:
 
 #### Login
 
@@ -51,7 +51,7 @@ url:    /login
 method: POST
 ```
 
-It will perform a request with an object in the body of the form
+It will perform a request with an object in the body of the form:
 
 ```
 {
@@ -60,7 +60,7 @@ It will perform a request with an object in the body of the form
 }
 ```
 
-It will expect a response containing an object of the form
+It will expect a response containing an object of the form:
 
 ```
 {
@@ -108,7 +108,7 @@ It will expect a response containing the complete list of all Abonnementen and t
   "totalPrice"  :42.37}
 ```
 
-* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo"`
+* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo"`.
 * The field `totalPrice` should be in euro's and should be point separated.
 
 ##### Add an Abonnement
@@ -158,8 +158,8 @@ It will expect a response containing the updated complete list of all Abonnement
   "totalPrice"  :62.37}
 ```
 
-* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
-* The field `totalPrice` should be in euro's and should be point separated.
+* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo"`.
+* The field `totalPrice` should be in euros and should be point separated.
 ##### Get a specific Abonnement from the logged in User
 
 Notice that the Abonnementen above only contain a small part of all information 
@@ -201,7 +201,8 @@ method: DELETE
 query parameter:  token
 ```
 
-It will expect a response containing the complete Abonnement for the given id. Because the Abonnement has been terminated, the field `status` should now read `opgezegd`.
+It will expect a response containing the complete Abonnement for the given id:
+Because the Abonnement has been terminated, the field `status` should now read `opgezegd`.
 
 ```
 {
@@ -233,7 +234,8 @@ The body will contain an object of the form:
 }
 ```
 
-It will expect a response containing the complete Abonnement that has been upgraded. Because the Abonnement has been upgraded, the field `verdubbeling` should now read `verdubbeld`. Furthermore, the field `price` should now show an increase of 50%.
+It will expect a response containing the complete Abonnement that has been upgraded:
+Because the Abonnement has been upgraded, the field `verdubbeling` should now read `verdubbeld`. Furthermore, the field `price` should now show an increase of 50%.
 
 ```
 {
@@ -281,7 +283,7 @@ It will expect a response containing an array Abonnementen:
 ]
 ```
 
-* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
+* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo"`.
 
 If the query parameter `filter` is non empty, only Abonnementen that contain the given filter string in either the `aanbieder` or `dienst` should be returned.
 
@@ -336,5 +338,3 @@ The body should contain the id of the new Abonnement:
 ```
 
 It will expect a 200 OK in the response.
-
-
