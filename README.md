@@ -108,7 +108,7 @@ It will expect a response containing the complete list of all Abonnementen and t
   "totalPrice"  :42.37}
 ```
 
-* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo""`
+* The field `aanbieder` should be a string and only contain either `"vodafone"` or `"ziggo"`
 * The field `totalPrice` should be in euro's and should be point separated.
 
 ##### Add an Abonnement
@@ -117,7 +117,7 @@ To add an Abonnement:
 
 ```
 url:    /abonnementen
-method: PST
+method: POST
 query parameter:  token
 ```
 
