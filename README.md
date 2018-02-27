@@ -183,7 +183,6 @@ It will expect a response containing the complete Abonnement for the given id:
   "prijs" : "€5,- per maand",
   "startDatum": "2017-01-01",
   "verdubbeling": "standaard",
-  "verdubbeld": false,
   "deelbaar": false,
   "status": "actief"
 }
