@@ -137,7 +137,10 @@ export class AbonnementenService extends RestfulClientService {
     try {
       const data: Abonnement = await this.httpClient.post<Abonnement>(endpointUrl,
         JSON.stringify({'verdubbeling': AbonnementUpgradabillity.UPGRADED}),
-        {params: params}).toPromise();
+        {
+          headers: this.headers,
+          params: params
+        }).toPromise();
       return data;
     } catch (err) {
       this.handleErrors(err);
