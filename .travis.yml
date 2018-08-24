@@ -1,9 +1,8 @@
 language: node_js
-sudo: required
-group: travis_lts
+sudo: true
 
 node_js:
-  - '7'
+  - '7.0'
 
 env:
   - CXX=g++-4.8
@@ -36,4 +35,13 @@ script:
 
 after_success:
     npm run coveralls
-    [ $TRAVIS_BRANCH = master ] && bash deploy.sh
+
+deploy:
+    provider: pages
+    local-dir: dist
+    skip-cleanup: true
+    github-token: $GH_TOKEN
+    keep-history: false
+    on:
+      branch: master
+
